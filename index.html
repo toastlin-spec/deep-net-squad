@@ -216,9 +216,9 @@ button{font-family:inherit;cursor:pointer;border:none;color:inherit}
         <li>網框內的生物都有機會撈到，<b>越靠近網框中心越容易成功</b>；體型越大越難撈。</li>
         <li>每撈一次要等網子冷卻（網框上的白色圈圈）。<b>撈到空網會讓「連撈」歸零</b>，還會嚇跑附近的魚。</li>
         <li><b>一網撈 3 隻以上</b>有一網多魚加成；<b>連撈</b>次數越多彩票加成越高（最高 ×2）。</li>
-        <li>撈魚會累積下方的 <b>👑 黃金魚王能量</b>，集滿就會召喚黃金魚王，撈到有大獎。</li>
-        <li>特殊生物：<b>墨汁烏賊</b>撈到會爆炸，全場一般魚群全部入袋；<b>電鰻</b>撈到放出連鎖閃電，撈失敗網子會觸電；<b>寶箱</b>開出隨機獎勵；<b>刺河豚</b>看到網子快速移動會脹氣，變得很難撈。</li>
-        <li>道具：<b>1 誘魚餌</b>（把魚吸過來）、<b>2 冰凍珊瑚</b>（全場變慢）、<b>3 墨汁炸彈</b>（立刻全場爆彈）。</li>
+        <li>撈魚會累積下方的 <b>👑 黃金魚王能量</b>，集滿就會召喚黃金魚王。撈到牠會進入 <b>黃金魔王關</b>：15 秒內滿海都是金色大魚，網子變大、冷卻變短，彩票和寶箱獎勵加倍，倒數期間關卡時間暫停。</li>
+        <li>特殊生物：<b>墨汁烏賊</b>撈到會爆炸，全場一般魚群全部入袋；<b>電鰻</b>撈到放出全場電擊，畫面上的魚全部入袋（Boss 也會受傷），撈失敗網子會觸電；<b>寶箱</b>開出隨機獎勵或稀有的雷電球，但有 2 成機會只是垃圾；<b>刺河豚</b>看到網子快速移動會脹氣，變得很難撈。</li>
+        <li>道具：<b>1 誘魚餌</b>（把魚吸過來）、<b>2 冰凍珊瑚</b>（全場變慢）、<b>3 墨汁炸彈</b>（立刻全場爆彈）、<b>4 雷電球</b>（全場電擊，只能從寶箱開出）。</li>
         <li><b>關卡挑戰</b>：達成目標就過關，剩下的時間越多星星越多；第一次拿到的每顆星換 1 枚代幣。每區第 6 關是 Boss，打倒才能前往下一片海。</li>
         <li><b>街機模式</b>：1 枚代幣玩 60 秒。彩票可以到商店升級網具、買道具、換代幣。每天第一次開啟送 3 枚代幣。</li>
       </ol>
@@ -318,18 +318,18 @@ const SP={
  bream:{name:'黑鯛',kind:'fish',size:25,spd:[70,95],rate:.7,val:6,w:[.8,2],school:[2,4],body:'#8a9aa8',belly:'#dfe5ea',fin:'#4a5866',pat:'vstripe',patc:'#4d5c6a',ratio:.68,desc:'釣客最愛的魚種，銀灰色身上有淡淡直紋。'},
  grouper:{name:'石斑魚',kind:'fish',size:36,spd:[45,60],rate:.42,val:22,w:[5,18],school:[1,1],body:'#a0703c',belly:'#dcb88e',fin:'#7a4f24',pat:'dots',patc:'#5a3414',ratio:.62,desc:'大塊頭的底棲魚，嘴巴很大，不容易撈起來。'},
  squid:{name:'墨汁烏賊',kind:'squid',size:24,spd:[60,85],rate:.55,val:20,w:[.3,1],school:[1,1],body:'#f2a3c7',fin:'#d9779f',special:'ink',desc:'撈到牠會噴出大爆炸墨汁，全場一般魚群通通入袋！'},
- chest:{name:'沉沒寶箱',kind:'chest',size:24,spd:[35,45],rate:.65,val:0,w:[3,8],school:[1,1],special:'chest',desc:'從沉船漂出的寶箱，可能開出彩票、道具、代幣或延長時間。'},
+ chest:{name:'沉沒寶箱',kind:'chest',size:24,spd:[35,45],rate:.65,val:0,w:[3,8],school:[1,1],special:'chest',desc:'從沉船漂出的寶箱，可能開出彩票、道具、稀有的雷電球、代幣或延長時間，不過也有機會只是一堆垃圾。'},
  lionfish:{name:'獅子魚',kind:'fish',size:24,spd:[50,70],rate:.62,val:10,w:[.5,1.2],school:[1,2],body:'#fff0e0',belly:'#fff8f0',fin:'#d94a2a',pat:'lion',patc:'#c7381e',ratio:.6,spiky:true,desc:'張開一身華麗毒棘，在沉船附近慢慢巡邏。'},
  moray:{name:'花斑海鱔',kind:'eel',size:40,spd:[55,75],rate:.45,val:16,w:[3,9],school:[1,1],body:'#9a9a42',patc:'#3a3a12',desc:'從沉船縫隙鑽出來的長條傢伙，身體滑溜溜。'},
  barracuda:{name:'梭魚',kind:'fish',size:34,spd:[170,210],rate:.5,val:15,w:[3,8],school:[1,3],body:'#9fb0bd',belly:'#e3ecf2',fin:'#5f7280',pat:'chevron',patc:'#4f6070',ratio:.3,desc:'海中的短跑健將，一閃而過，要預判牠的路線。'},
  shrimp:{name:'熱泉蝦',kind:'shrimp',size:12,spd:[90,120],rate:.95,val:2,w:[.02,.05],school:[6,10],body:'#ff6f5a',desc:'聚集在熱泉周圍的小蝦群，一網可以撈起好幾隻。'},
  lantern:{name:'燈籠魚',kind:'fish',size:19,spd:[70,95],rate:.75,val:8,w:[.1,.3],school:[2,4],body:'#2c3f7a',belly:'#4a63b8',fin:'#1e2b57',pat:'glowdots',patc:'#8ff7ff',ratio:.55,glow:'#8ff7ff',desc:'肚子上有一排會發光的小燈，在黑暗中特別顯眼。'},
  jelly:{name:'幽光水母',kind:'jelly',size:22,spd:[25,40],rate:.7,val:7,w:[.2,.6],school:[1,3],body:'#c98cff',glow:'#d9a8ff',desc:'一縮一放地慢慢漂，等牠和其他魚擠在一起再撈最划算。'},
- eel:{name:'電鰻',kind:'eel',size:44,spd:[60,80],rate:.45,val:26,w:[5,15],school:[1,1],body:'#3d4a5c',patc:'#ffe94a',special:'zap',glow:'#ffe94a',desc:'撈到時會放出連鎖閃電電暈附近的魚；撈失敗網子會觸電麻痺。'},
+ eel:{name:'電鰻',kind:'eel',size:44,spd:[60,80],rate:.45,val:26,w:[5,15],school:[1,1],body:'#3d4a5c',patc:'#ffe94a',special:'zap',glow:'#ffe94a',desc:'撈到時會放出全場電擊，把畫面上所有的魚一口氣電暈撈起，連 Boss 也會受傷；撈失敗網子會觸電麻痺。'},
  cod:{name:'北極鱈',kind:'fish',size:22,spd:[80,105],rate:.78,val:6,w:[1,3],school:[3,5],body:'#8fa86a',belly:'#eef2de',fin:'#64784a',pat:'speck',patc:'#56663f',ratio:.5,desc:'耐寒的冰海魚群，肉質鮮美。'},
  icefish:{name:'冰魚',kind:'fish',size:19,spd:[85,115],rate:.8,val:7,w:[.2,.5],school:[3,6],body:'rgba(205,238,255,.78)',belly:'rgba(255,255,255,.85)',fin:'rgba(160,215,255,.75)',pat:'bones',patc:'rgba(90,150,200,.8)',ratio:.45,desc:'身體幾乎透明，血液沒有紅色，看得到骨頭。'},
  crystal:{name:'冰晶魚',kind:'fish',size:22,spd:[150,190],rate:.5,val:32,w:[.5,1.2],school:[1,1],body:'#bff4ff',belly:'#ffffff',fin:'#7ad9ff',pat:'facet',patc:'#ffffff',ratio:.6,glow:'#bff4ff',desc:'稀有又敏捷的閃亮魚兒，用冰凍珊瑚會比較好撈。'},
- golden:{name:'黃金魚王',kind:'fish',size:40,spd:[140,160],rate:.42,val:150,w:[20,40],school:[1,1],body:'#ffd23f',belly:'#fff2a8',fin:'#ffae00',pat:'crown',patc:'#b07800',ratio:.62,glow:'#ffe680',special:'golden',desc:'集滿能量才會現身的傳說之魚，全身金光閃閃，撈到就發財。'},
+ golden:{name:'黃金魚王',kind:'fish',size:40,spd:[140,160],rate:.42,val:150,w:[20,40],school:[1,1],body:'#ffd23f',belly:'#fff2a8',fin:'#ffae00',pat:'crown',patc:'#b07800',ratio:.62,glow:'#ffe680',special:'golden',desc:'集滿能量才會現身的傳說之魚，全身金光閃閃。撈到牠就會進入「黃金魔王關」，滿海都是金色大魚。'},
  crab:{name:'巨鉗蟹王',kind:'crab',boss:true,size:70,spd:[70,70],hp:12,val:500,w:[60,90],body:'#e0482f',belly:'#ff9a7a',desc:'珊瑚礁的霸主。大鉗子發紅時會用力夾擊，網子會被夾住無法撈。'},
  octopus:{name:'深淵大章魚',kind:'octopus',boss:true,size:68,spd:[60,60],hp:16,val:700,w:[80,140],body:'#b04ad0',desc:'海藻森林的主人，脹大身體後會朝網子噴出大片墨汁。'},
  shark:{name:'鐵甲鯊',kind:'shark',boss:true,size:92,spd:[85,85],hp:20,val:900,w:[300,500],body:'#64788a',belly:'#d6dee5',desc:'身披沉船鐵板的鯊魚，閃紅光後會朝網子猛衝。'},
@@ -362,15 +362,15 @@ const GOAL_TIPS={
   score:'一網多魚和連撈都有彩票加成，別亂撈空網。',
   multi:'把網子停在魚群前方，等牠們游進網框中央再撈。',
   combo:'撈空網會讓連撈歸零，確定網裡有魚再出手。',
-  golden:'撈魚會累積下方能量條，集滿就會召喚黃金魚王。',
+  golden:'撈魚會累積下方能量條，集滿就會召喚黃金魚王。撈到牠會進入黃金魔王關。',
 };
 const SP_TIPS={
   puffer:'網子移動太快會嚇得河豚脹氣，脹氣時很難撈。把網子停在牠前方，等牠自己游進來。',
   seahorse:'海馬游得很慢，最好等牠和其他魚擠在一起再撈。',
   squid:'撈到墨汁烏賊會引爆墨汁，全場一般魚群全部入袋！',
-  chest:'寶箱可能開出彩票、道具、代幣或加時。',
+  chest:'寶箱可能開出彩票、道具、雷電球、代幣或加時，也可能是垃圾。',
   barracuda:'梭魚游得很快，要預判路線，或用冰凍珊瑚讓牠慢下來。',
-  eel:'電鰻撈失敗會讓網子觸電；撈到則會放出連鎖閃電。',
+  eel:'電鰻撈失敗會讓網子觸電；撈到則會放出全場電擊，畫面上的魚全部入袋！',
   jelly:'水母慢慢漂，適合等牠和其他魚擠在一起再撈。',
   crystal:'冰晶魚稀有又快，冰凍珊瑚是好幫手。',
 };
@@ -385,7 +385,7 @@ const lvKey=(a,i)=>a+'-'+i;
 
 /* ================= 存檔 ================= */
 const SAVE_KEY='deepNetSquad_v1';
-const DEF_SAVE=()=>({tickets:0,tokens:5,up:{size:0,speed:0,power:0},items:{bait:1,freeze:1,ink:1},lv:{},codex:{},best:{},lastDaily:'',music:true,sfx:true,seenHelp:false,total:{fish:0,tickets:0}});
+const DEF_SAVE=()=>({tickets:0,tokens:5,up:{size:0,speed:0,power:0},items:{bait:1,freeze:1,ink:1,thunder:0},lv:{},codex:{},best:{},lastDaily:'',music:true,sfx:true,seenHelp:false,total:{fish:0,tickets:0}});
 function load(){
   try{const s=JSON.parse(localStorage.getItem(SAVE_KEY));
     if(s){const d=DEF_SAVE();return Object.assign(d,s,{up:Object.assign(d.up,s.up||{}),items:Object.assign(d.items,s.items||{}),total:Object.assign(d.total,s.total||{})});}
@@ -415,8 +415,15 @@ const ITEMS={
   bait:{name:'誘魚餌',icon:'🪱',key:'1',cost:120,desc:'6 秒內把附近的魚吸向網子。'},
   freeze:{name:'冰凍珊瑚',icon:'❄️',key:'2',cost:160,desc:'5 秒內所有生物游速大減，捕獲率小幅提升。'},
   ink:{name:'墨汁炸彈',icon:'💣',key:'3',cost:300,desc:'在網子位置引爆，撈起全場一般魚群。'},
+  thunder:{name:'雷電球',icon:'⚡',key:'4',cost:0,chestOnly:true,desc:'放出全場電擊，撈起畫面上所有的魚，Boss 也會受傷。只能從寶箱開出。'},
 };
 const ITEM_MAX=9,TOKEN_COST=250;
+/* 寶箱裡的垃圾 */
+const JUNK=[['👢','破靴子'],['🥫','空罐頭'],['🛞','舊輪胎'],['🦴','魚骨頭'],['🧦','臭襪子'],['🧴','塑膠瓶']];
+const JUNK_RATE=.2;
+/* 黃金魔王關：撈到黃金魚王後進入 */
+const BONUS_TIME=15,BONUS_NET=1.5,BONUS_MULT=2;
+const BONUS_FISH=['grouper','bream','barracuda','cod','lionfish','tang','butterfly','lantern'];
 
 /* ================= 音效與音樂（程式合成） ================= */
 const AU={ctx:null,sfxG:null,musG:null,nb:null,next:0,step:0,area:0};
@@ -465,6 +472,7 @@ function sfx(name,arg){
     case 'warn':tone(880,.08,'square',.05);tone(880,.08,'square',.05,n+.14);break;
     case 'golden':[72,76,79,84,88].forEach((m,i)=>tone(midi(m),.22,'triangle',.12,n+i*.08));break;
     case 'chest':[84,88,91,96].forEach((m,i)=>tone(midi(m),.16,'sine',.1,n+i*.06));break;
+    case 'junk':tone(220,.3,'sawtooth',.05,0,90);noise(.25,.2,'lowpass',700,150);break;
     case 'coin':tone(1320,.08,'square',.05);tone(1760,.14,'square',.05,n+.07);break;
     case 'item':tone(700,.25,'sine',.12,0,1500);break;
     case 'click':tone(760,.05,'triangle',.07);break;
@@ -1014,6 +1022,7 @@ function newGame(mode,area,li){
     fish:[],fx:[],pops:[],flyers:[],inks:[],ices:[],banner:null,
     net:{x:W/2,y:H/2+40,tx:W/2,ty:H/2+40,r:netRadius(),cd:0,cdMax:netCd(),stun:0,lift:0,spd:0,iced:false},
     score:0,caught:0,spc:{},combo:0,bestCombo:0,bestMulti:0,energy:0,golden:0,goldenOut:false,comboPop:0,
+    bonus:0,bonusPending:false,bonusStart:0,
     boss:null,bossDone:false,bossAt:L&&L.g==='boss'?1.2:mode==='arcade'?24:-1,bossSpawned:false,
     eff:{bait:0,freeze:0,dark:0},spawnT:0,shake:0,endT:0,win:false,committed:false,lastTick:99,codexNew:[]};
   AU.area=area;
@@ -1033,18 +1042,39 @@ function makeFish(id,x,y,dir,spd){
   return {id,sp,x,y,by:y,dir,spd,size:sp.size*rand(.92,1.08),t:rand(0,10),amp:rand(4,12),freq:rand(.7,1.4),vy:rand(-6,6),
     w:rand(sp.w[0],sp.w[1]),state:'swim',flee:0,fvy:0,puff:0,puffT:0,flash:0,dead:false};
 }
+const GOLD_SP={};
+function goldSp(id){
+  const b=SP[id];
+  return GOLD_SP[id]||(GOLD_SP[id]=Object.assign({},b,{body:'#ffd23f',belly:'#fff2a8',fin:'#ffae00',tail:'#ffae00',patc:'#b07800',glow:'#ffe680',
+    rate:.8,val:Math.max(30,b.val*2),school:[2,3],gold:true}));
+}
+function goldify(f){f.sp=goldSp(f.id);f.size*=1.6;f.w*=2.5;f.spd*=.75;}
 function spawnGroup(anywhere){
-  const id=pickSpecies(),sp=SP[id];
+  const bonus=G.bonus>0,id=bonus?(Math.random()<.12?'chest':BONUS_FISH[randi(0,BONUS_FISH.length-1)]):pickSpecies();
+  const gold=bonus&&id!=='chest',sp=gold?goldSp(id):SP[id],sz=sp.size*(gold?1.6:1);
   const n=randi(sp.school[0],sp.school[1]),dir=Math.random()<.5?1:-1;
   const by=rand(120,H-180);
-  const bx=anywhere?rand(120,W-120):(dir>0?-50-sp.size:W+50+sp.size);
+  const bx=anywhere?rand(120,W-120):(dir>0?-50-sz:W+50+sz);
   const spd=rand(sp.spd[0],sp.spd[1]);
-  for(let i=0;i<n;i++)G.fish.push(makeFish(id,bx-dir*(i*sp.size*1.5+rand(0,25)),by+rand(-45,45),dir,spd*rand(.94,1.06)));
+  for(let i=0;i<n;i++){const f=makeFish(id,bx-dir*(i*sz*1.5+rand(0,25)),by+rand(-45,45),dir,spd*rand(.94,1.06));if(gold)goldify(f);G.fish.push(f);}
 }
 function spawnGolden(){
   const dir=Math.random()<.5?1:-1;
   G.fish.push(makeFish('golden',dir>0?-80:W+80,rand(200,H-260),dir,rand(140,160)));
   G.goldenOut=true;banner('👑 黃金魚王出現！','快撈！','#ffe066');sfx('golden');
+}
+function startBonus(){
+  G.bonusPending=false;G.bonus=BONUS_TIME;G.bonusStart=G.score;
+  for(const f of G.fish)if(!f.dead&&!f.sp.boss&&f.id!=='chest'){sparks(f.x,f.y,6,'255,220,90',120);f.dead=true;}
+  for(let i=0;i<6;i++)spawnGroup(true);
+  banner('👑 進入黃金魔王關！',`${BONUS_TIME} 秒內網子變大、彩票 ×${BONUS_MULT}`,'#ffe066');sfx('golden');G.shake=.5;
+  addFx({type:'flash',life:.6,max:.6,color:'255,220,90'});
+}
+function endBonus(){
+  G.bonus=0;
+  for(const f of G.fish)if(!f.dead&&f.sp.gold){sparks(f.x,f.y,6,'255,220,90',120);f.dead=true;}
+  for(let i=0;i<5;i++)spawnGroup(true);
+  banner('黃金魔王關結束',`共賺到 +${G.score-G.bonusStart} 彩票`,'#ffe066');sfx('win');
 }
 function spawnBoss(){
   const id=AREAS[G.area].boss,sp=SP[id],dir=Math.random()<.5?1:-1;
@@ -1070,13 +1100,13 @@ function scare(f,tm){
 }
 function catchFish(f,emult){
   f.dead=true;f.state='caught';
-  const sp=f.sp,wn=(f.w-sp.w[0])/((sp.w[1]-sp.w[0])||1);
-  const v=Math.round(sp.val*(.85+.3*wn));
+  const sp=f.sp,wn=clamp((f.w-sp.w[0])/((sp.w[1]-sp.w[0])||1),0,1);
+  const v=Math.round(sp.val*(.85+.3*wn)*(G.bonus>0?BONUS_MULT:1));
   G.caught++;G.spc[f.id]=(G.spc[f.id]||0)+1;
   const cx=S.codex[f.id]||(S.codex[f.id]={n:0,maxW:0});
   if(cx.n===0&&!G.codexNew.includes(f.id))G.codexNew.push(f.id);
   cx.n++;cx.maxW=Math.max(cx.maxW,f.w);S.total.fish++;
-  if(sp.special!=='golden'&&!sp.boss)G.energy=Math.min(100,G.energy+(3+v*.45)*(emult||1));
+  if(sp.special!=='golden'&&!sp.boss&&!G.bonus)G.energy=Math.min(100,G.energy+(3+v*.45)*(emult||1));
   G.flyers.push({f:{sp,size:f.size,dir:f.dir,t:f.t,puff:f.puff,flash:0,x:f.x,y:f.y,segs:f.segs,tele:0,claw:0,dash:0,look:0},x0:f.x,y0:f.y,life:0,max:rand(.7,.9)});
   if(sp.special==='golden'){G.golden++;G.goldenOut=false;}
   return v;
@@ -1084,7 +1114,7 @@ function catchFish(f,emult){
 function scoop(){
   const n=G.net;
   if(G.state!=='play'||n.cd>0||n.stun>0)return;
-  n.cdMax=netCd()*(n.iced?1.8:1);n.cd=n.cdMax;n.lift=1;
+  n.cdMax=netCd()*(n.iced?1.8:1)*(G.bonus>0?.6:1);n.cd=n.cdMax;n.lift=1;
   sfx('splash');
   addFx({type:'ripple',x:n.x,y:n.y,r:n.r,life:.45,max:.45});
   for(let i=0;i<10;i++){const a=rand(0,TAU);addFx({type:'bub',x:n.x+Math.cos(a)*n.r,y:n.y+Math.sin(a)*n.r,vx:Math.cos(a)*rand(30,90),vy:Math.sin(a)*rand(30,90)-40,r:rand(2,5),life:rand(.5,.9),max:.9});}
@@ -1130,9 +1160,9 @@ function scoop(){
   for(const f of got)if(f.sp.val>=10&&f.sp.special!=='golden')addPop(f.x,f.y+f.size,`${f.sp.name} ${fmtW(f.w)}`,'#ffffff',15);
   for(const f of got){
     if(f.sp.special==='ink')inkBomb(f.x,f.y);
-    else if(f.sp.special==='zap')chainZap(f);
+    else if(f.sp.special==='zap')electricStorm(f.x,f.y,'電鰻');
     else if(f.sp.special==='chest')openChest(f);
-    else if(f.sp.special==='golden'){sfx('golden');banner('👑 撈到黃金魚王！',`${f.sp.name} ${fmtW(f.w)}`,'#ffe066');G.shake=.45;sparks(f.x,f.y,40,'255,220,90',360);addFx({type:'ring',x:f.x,y:f.y,r:60,life:.7,max:.7,color:'255,220,90'});}
+    else if(f.sp.special==='golden'){sfx('golden');banner('👑 撈到黃金魚王！',`${f.sp.name} ${fmtW(f.w)}　即將進入黃金魔王關`,'#ffe066');G.bonusPending=true;G.shake=.45;sparks(f.x,f.y,40,'255,220,90',360);addFx({type:'ring',x:f.x,y:f.y,r:60,life:.7,max:.7,color:'255,220,90'});}
   }
 }
 function bumpCombo(){G.combo++;G.bestCombo=Math.max(G.bestCombo,G.combo);G.comboPop=1;if(G.combo>=2)sfx('combo',G.combo);}
@@ -1148,22 +1178,36 @@ function inkBomb(x,y){
   banner('墨汁爆彈！',cnt?`${cnt} 隻入袋　+${gain} 彩票`:'可惜附近沒有魚','#e0b8ff');
   for(const f of chests)openChest(f);
 }
-function chainZap(e){
-  const list=G.fish.filter(f=>!f.dead&&!f.sp.boss&&f.sp.special!=='golden').map(f=>[f,dist(f,e)]).filter(a=>a[1]<320).sort((a,b)=>a[1]-b[1]).slice(0,6);
-  let sum=0,prev={x:e.x,y:e.y};const chests=[];
-  for(const [f] of list){addFx({type:'bolt',x1:prev.x,y1:prev.y,x2:f.x,y2:f.y,life:.45,max:.45});prev={x:f.x,y:f.y};sum+=catchFish(f,.5);if(f.sp.special==='chest')chests.push(f);}
-  sfx('zap');
-  if(list.length){const gain=Math.round(sum*comboMult());G.score+=gain;addPop(e.x,e.y-44,`連鎖閃電 ${list.length} 隻 +${gain}`,'#ffe94a',22);}
+function electricStorm(x,y,src){
+  sfx('zap');sfx('boom');G.shake=.6;
+  addFx({type:'flash',life:.4,max:.4,color:'255,250,190'});
+  for(let i=0;i<8;i++){const a=i/8*TAU;addFx({type:'bolt',x1:x,y1:y,x2:x+Math.cos(a)*170,y2:y+Math.sin(a)*170,life:.5,max:.5});}
+  let sum=0,cnt=0;const chests=[];
+  for(const f of G.fish){
+    if(f.dead||f.x<-20||f.x>W+20||f.sp.special==='golden')continue;
+    if(f.sp.boss){if(f.state!=='enter'){addFx({type:'bolt',x1:x,y1:y,x2:f.x,y2:f.y,life:.6,max:.6});hitBoss(f);}continue;}
+    addFx({type:'bolt',x1:x,y1:y,x2:f.x,y2:f.y,life:.5,max:.5});
+    sum+=catchFish(f,.5);cnt++;if(f.sp.special==='chest')chests.push(f);
+  }
+  const gain=Math.round(sum*comboMult());G.score+=gain;
+  banner(`⚡ ${src}全場電擊！`,cnt?`${cnt} 隻入袋　+${gain} 彩票`:'可惜畫面上沒有魚','#ffe94a');
   for(const f of chests)openChest(f);
 }
 function openChest(f){
+  const bonus=G.bonus>0,k=bonus?3:1;
+  if(!bonus&&Math.random()<JUNK_RATE){
+    const [ic,nm]=JUNK[randi(0,JUNK.length-1)];sfx('junk');sparks(f.x,f.y,12,'160,150,130',150);
+    addPop(clamp(f.x,230,W-230),f.y-34,`寶箱裡只有垃圾：${ic} ${nm}…`,'#c9c0ad',22);return;
+  }
   sfx('chest');sparks(f.x,f.y,24,'255,215,80',260);
-  const r=Math.random();let msg;
-  if(r<.4){const v=Math.round(rand(60,160)*(1+G.area*.35));G.score+=v;msg=`寶箱：+${v} 彩票`;}
-  else if(r<.65){const ks=Object.keys(ITEMS),k=ks[randi(0,ks.length-1)];S.items[k]=Math.min(ITEM_MAX,S.items[k]+1);msg=`寶箱：${ITEMS[k].icon} ${ITEMS[k].name} +1`;}
-  else if(r<.8){S.tokens++;msg='寶箱：🪙 代幣 +1';}
-  else{G.timeLeft+=8;msg='寶箱：⏱ 時間 +8 秒';}
-  addPop(f.x,f.y-34,msg,'#ffe680',22);save();
+  const r=Math.random(),addItem=(id,n)=>{S.items[id]=Math.min(ITEM_MAX,S.items[id]+n);return `${ITEMS[id].icon} ${ITEMS[id].name} +${n}`;};
+  let msg;
+  if(r<.35){const v=Math.round(rand(60,160)*(1+G.area*.35)*k);G.score+=v;msg=`+${v} 彩票`;}
+  else if(r<.55){const ks=Object.keys(ITEMS).filter(id=>!ITEMS[id].chestOnly);msg=addItem(ks[randi(0,ks.length-1)],k);}
+  else if(r<.7){msg=addItem('thunder',bonus?2:1);G.shake=Math.max(G.shake,.2);}
+  else if(r<.82){S.tokens+=k;msg=`🪙 代幣 +${k}`;}
+  else{G.timeLeft+=8;msg='⏱ 時間 +8 秒';}
+  addPop(clamp(f.x,230,W-230),f.y-34,(bonus?'黃金寶箱：':'寶箱：')+msg,'#ffe680',22);save();
 }
 function useItem(k){
   if(!G||G.state!=='play'||S.items[k]<=0)return;
@@ -1171,6 +1215,7 @@ function useItem(k){
   S.items[k]--;save();sfx('item');
   if(k==='bait'){G.eff.bait=6;addPop(G.net.x,G.net.y-G.net.r-24,'誘魚餌！','#ffb3c7',24);}
   else if(k==='freeze'){G.eff.freeze=5;banner('❄️ 冰凍珊瑚！','全場減速 5 秒','#bff4ff');}
+  else if(k==='thunder')electricStorm(G.net.x,G.net.y,'雷電球');
   else inkBomb(G.net.x,G.net.y);
 }
 
@@ -1272,7 +1317,8 @@ function update(dt){
   updAmbient(dt);
   const playing=G.state==='play';
   if(playing){
-    G.el+=dt;G.timeLeft-=dt;
+    if(G.bonus>0){G.bonus-=dt;if(G.bonus<=0)endBonus();}
+    else{G.el+=dt;G.timeLeft-=dt;}
     const tc=Math.ceil(G.timeLeft);
     if(G.timeLeft<=5.5&&G.timeLeft>0&&tc!==G.lastTick){G.lastTick=tc;sfx('tick');}
     for(const k in G.eff)if(G.eff[k]>0)G.eff[k]=Math.max(0,G.eff[k]-dt);
@@ -1286,18 +1332,19 @@ function update(dt){
   if(n.cd>0)n.cd=Math.max(0,n.cd-dt);
   if(n.stun>0){n.stun-=dt;if(Math.random()<.5){const a=rand(0,TAU);addFx({type:'spark',x:n.x+Math.cos(a)*n.r,y:n.y+Math.sin(a)*n.r,vx:0,vy:0,r:3,life:.25,max:.25,color:'255,240,120'});}}
   if(n.lift>0)n.lift=Math.max(0,n.lift-dt*3.2);
-  n.r=netRadius();
+  n.r=netRadius()*(G.bonus>0?BONUS_NET:1);
   G.spawnT-=dt;
   if(G.spawnT<=0){
     let cnt=0;for(const f of G.fish)if(!f.sp.boss)cnt++;
-    const max=16+G.area*1.5+(G.L&&G.L.g==='count'?4:0);
+    const max=G.bonus>0?13:16+G.area*1.5+(G.L&&G.L.g==='count'?4:0);
     if(cnt<max)spawnGroup(false);
     G.spawnT=rand(.45,1)*(cnt<8?.5:1);
   }
-  if(playing&&G.bossAt>=0&&!G.bossSpawned&&G.el>=G.bossAt)spawnBoss();
-  if(playing&&G.energy>=100&&!G.goldenOut){G.energy=0;spawnGolden();}
+  if(playing&&G.bossAt>=0&&!G.bossSpawned&&G.el>=G.bossAt&&!G.bonus)spawnBoss();
+  if(playing&&G.bonusPending&&!G.boss&&!G.bonus)startBonus();
+  if(playing&&G.energy>=100&&!G.goldenOut&&!G.bonus&&!G.bonusPending){G.energy=0;spawnGolden();}
   for(const f of G.fish)updFish(f,dt);
-  for(const f of G.fish)if(!f.dead&&f.sp.glow&&!f.sp.boss&&(f.sp.special==='golden'||f.id==='crystal')&&Math.random()<dt*8)
+  for(const f of G.fish)if(!f.dead&&f.sp.glow&&!f.sp.boss&&(f.sp.special==='golden'||f.sp.gold||f.id==='crystal')&&Math.random()<dt*8)
     addFx({type:'spark',x:f.x+rand(-f.size,f.size),y:f.y+rand(-f.size*.5,f.size*.5),vx:0,vy:-20,r:rand(1.5,3),life:.6,max:.6,color:f.id==='crystal'?'220,250,255':'255,230,120'});
   G.fish=G.fish.filter(f=>!f.dead);
   for(const e of G.fx){e.life-=dt;
@@ -1312,7 +1359,7 @@ function update(dt){
   if(G.comboPop>0)G.comboPop=Math.max(0,G.comboPop-dt*4);
   if(G.banner){G.banner.life-=dt;if(G.banner.life<=0)G.banner=null;}
   if(playing){
-    if(G.L){const [c,nn]=goalProg();if(c>=nn)finish(true);}
+    if(G.L&&!G.bonus&&!G.bonusPending){const [c,nn]=goalProg();if(c>=nn)finish(true);}
     if(G.state==='play'&&G.timeLeft<=0){G.timeLeft=0;finish(G.mode==='arcade');}
   }
   if(G.state==='ending'){G.endT-=dt;if(G.endT<=0){G.state='over';showResult();}}
@@ -1336,6 +1383,7 @@ function drawFx(c){
       case 'spark':c.fillStyle=`rgba(${e.color||'255,230,120'},${u})`;circ(c,e.x,e.y,e.r*(.5+u*.5));break;
       case 'ring':c.strokeStyle=`rgba(${e.color||'255,220,100'},${u})`;c.lineWidth=6*u+.5;c.beginPath();c.arc(e.x,e.y,e.r*(1+(1-u)*1.8),0,TAU);c.stroke();break;
       case 'ink':{const g=1-u;for(let i=0;i<9;i++){const a=i/9*TAU+e.seed,rr=(60+g*520)*(i%2?.8:1);c.fillStyle=`rgba(30,10,45,${u*.55})`;circ(c,e.x+Math.cos(a)*rr*.4,e.y+Math.sin(a)*rr*.4,rr*.55);}break;}
+      case 'flash':c.fillStyle=`rgba(${e.color},${u*.45})`;c.fillRect(-20,-20,W+40,H+40);break;
       case 'bolt':{c.strokeStyle=`rgba(255,240,120,${u})`;c.lineWidth=3;c.shadowColor='#ffe94a';c.shadowBlur=12;c.beginPath();c.moveTo(e.x1,e.y1);
         for(let i=1;i<7;i++){const k=i/7;c.lineTo(lerp(e.x1,e.x2,k)+rand(-14,14),lerp(e.y1,e.y2,k)+rand(-14,14));}c.lineTo(e.x2,e.y2);c.stroke();c.shadowBlur=0;break;}
     }
@@ -1379,6 +1427,8 @@ function render(c){
   if(G.eff.freeze>0){const a=Math.min(1,G.eff.freeze)*.14;c.fillStyle=`rgba(190,235,255,${a})`;c.fillRect(-20,-20,W+40,H+40);
     const g=c.createRadialGradient(W/2,H/2,H*.4,W/2,H/2,H);g.addColorStop(0,'rgba(220,245,255,0)');g.addColorStop(1,`rgba(220,245,255,${a*3})`);c.fillStyle=g;c.fillRect(-20,-20,W+40,H+40);}
   drawDark(c);
+  if(G.bonus>0){const a=.1+.04*Math.sin(G.t*4);c.fillStyle=`rgba(255,200,60,${a})`;c.fillRect(-20,-20,W+40,H+40);
+    const g=c.createRadialGradient(W/2,H/2,H*.35,W/2,H/2,H);g.addColorStop(0,'rgba(255,215,90,0)');g.addColorStop(1,`rgba(255,190,40,${a*3})`);c.fillStyle=g;c.fillRect(-20,-20,W+40,H+40);}
   for(const fl of G.flyers){
     const u=fl.life/fl.max,e=u*u*(3-2*u),x1=1150,y1=40,cx=(fl.x0+x1)/2,cy=Math.min(fl.y0,y1)-140;
     const f=fl.f;f.x=(1-e)*(1-e)*fl.x0+2*(1-e)*e*cx+e*e*x1;f.y=(1-e)*(1-e)*fl.y0+2*(1-e)*e*cy+e*e*y1;
@@ -1391,6 +1441,7 @@ function render(c){
     const sc=1+G.comboPop*.45,col=G.combo>=15?'#ff6bd6':G.combo>=8?'#ffb627':'#ffe066';
     c.save();c.translate(W/2,G.boss?150:118);c.scale(sc,sc);txt(c,`${G.combo} 連撈`,0,0,30,col);txt(c,`彩票 ×${comboMult().toFixed(2)}`,0,24,16,'#bdf3ff');c.restore();
   }
+  if(G.bonus>0&&G.state==='play')txt(c,`👑 黃金魔王關　${Math.ceil(G.bonus)}`,W/2,H-82,30,'#ffe066');
   if(G.banner){const b=G.banner,u=b.life/b.max,a=Math.min(1,u*4,(1-u)*10),sc=1+Math.max(0,(u-.85))*3;
     c.save();c.globalAlpha=a;c.translate(W/2,H*.4);c.scale(sc,sc);txt(c,b.text,0,0,56,b.color);if(b.sub)txt(c,b.sub,0,42,24,'#ffffff');c.restore();}
 }
@@ -1479,10 +1530,10 @@ function renderShop(){
       <div class="pips">${Array.from({length:U.max},(_,i)=>`<div class="pip${i<lv?' on':''}"></div>`).join('')}</div></div>
       <button class="btn sm buy" data-up="${k}" ${max||S.tickets<cost?'disabled':''}>${max?'已滿級':'🎫 '+cost}</button></div>`;}
   $('shopUp').innerHTML=h;
-  h='<h3>🎒 道具（遊戲中按 1、2、3 使用）</h3>';
+  h='<h3>🎒 道具（遊戲中按 1、2、3、4 使用）</h3>';
   for(const k in ITEMS){const I=ITEMS[k],n=S.items[k];
     h+=`<div class="row"><div class="ic">${I.icon}</div><div class="tx"><div class="nm">${I.name}</div><div class="ds">${I.desc}</div><div class="cur">持有 ${n} / ${ITEM_MAX}</div></div>
-      <button class="btn sm blue buy" data-item="${k}" ${n>=ITEM_MAX||S.tickets<I.cost?'disabled':''}>🎫 ${I.cost}</button></div>`;}
+      ${I.chestOnly?'<button class="btn sm gray" disabled>寶箱限定</button>':`<button class="btn sm blue buy" data-item="${k}" ${n>=ITEM_MAX||S.tickets<I.cost?'disabled':''}>🎫 ${I.cost}</button>`}</div>`;}
   h+=`<h3 style="margin-top:14px">🪙 代幣兌換</h3><div class="row"><div class="ic">🪙</div><div class="tx"><div class="nm">街機代幣 ×1</div><div class="ds">街機模式每局需要 1 枚。持有 ${S.tokens} 枚。</div></div>
     <button class="btn sm blue buy" data-token="1" ${S.tickets<TOKEN_COST?'disabled':''}>🎫 ${TOKEN_COST}</button></div>`;
   $('shopItems').innerHTML=h;
@@ -1628,7 +1679,7 @@ function updHud(){
   for(const k in ITEMS){setTx('itc_'+k,String(S.items[k]));const dis=S.items[k]<=0||G.state!=='play';if(hudCache['dis'+k]!==dis){hudCache['dis'+k]=dis;$('it_'+k).disabled=dis;}
     setCls('it_'+k,'act',(k==='bait'&&G.eff.bait>0)||(k==='freeze'&&G.eff.freeze>0));}
   const fx=[];if(G.eff.bait>0)fx.push(`🪱 誘魚 ${Math.ceil(G.eff.bait)}s`);if(G.eff.freeze>0)fx.push(`❄️ 冰凍 ${Math.ceil(G.eff.freeze)}s`);
-  if(G.net.stun>0)fx.push('⚡ 網子麻痺');if(G.net.iced)fx.push('🧊 網子結冰');
+  if(G.bonus>0)fx.push(`👑 魔王關 ${Math.ceil(G.bonus)}s`);if(G.net.stun>0)fx.push('⚡ 網子麻痺');if(G.net.iced)fx.push('🧊 網子結冰');
   setHtml('hFx',fx.map(s=>`<span>${s}</span>`).join(''));
 }
 
@@ -1647,7 +1698,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
   if(!G)return;
   if(e.code==='Space'){e.preventDefault();if(G.state==='play')scoop();}
-  else if(e.key==='1')useItem('bait');else if(e.key==='2')useItem('freeze');else if(e.key==='3')useItem('ink');
+  else if(e.key==='1')useItem('bait');else if(e.key==='2')useItem('freeze');else if(e.key==='3')useItem('ink');else if(e.key==='4')useItem('thunder');
   else if(e.key==='Escape'||e.key==='p'||e.key==='P'){if(G.state==='play')pauseGame();else if(G.state==='paused')resumeGame();}
 });
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&G&&G.state==='play')pauseGame();});
